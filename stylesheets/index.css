@@ -45,3 +45,16 @@ html, body {
     /* space-* distributes leftover space */
     justify-content: space-around;
 }
+
+.picture-frame {
+    width: 90%;
+    /* outline: 5px solid red; */
+    margin: 0 auto;
+    text-align: center;
+}
+.picture-frame > img {
+    /* the img adapts to its parent */
+    /* definitely, absolutely use both max-height and max-width */
+    max-height: 100%;
+    max-width: 100%;
+}
