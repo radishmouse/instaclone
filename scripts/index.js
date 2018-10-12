@@ -13,13 +13,23 @@ const IMAGES = [
 //     "images/oakley-2.jpg"
 // ];
 
-// function that generates the thumbnail div
 // function that generates an img element
 function createImage(imageURL) {
     const theImage = document.createElement('img');
-
+    
     // theImage.src = imageURL;
     theImage.setAttribute('src', imageURL);
-
+    
     return theImage;
+}
+
+// function that generates the thumbnail div
+function createThumbnail(imageURL){
+    const theContainer = document.createElement('div');
+    theContainer.classList.add('thumbnail-item');
+
+    const image = createImage(imageURL);
+    theContainer.appendChild(image);
+
+    return theContainer;
 }
