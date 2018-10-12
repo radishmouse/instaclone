@@ -10,8 +10,16 @@
 </head>
 <body>
     <h1>Instaclone</h1>
-    <div class="thumbnail-container">
-        <div class="thumbnail-item">
+    <!-- 
+        I need to generate a .thumbnail-item div
+        and an img element for every image URL
+        in my images array.
+
+        I will append each of theose .thumbnail-item divs
+        to the .thumbnail-container.
+     -->
+    <div class="thumbnail-container" data-container>
+    <!-- <div class="thumbnail-item">
             <img src="https://scontent-sjc3-1.cdninstagram.com/vp/54a8da585c48cc60b0f4cddc6d520550/5C5F929F/t51.2885-15/e35/39356533_2097180177200225_2485126450366119936_n.jpg" alt="">
         </div>
         <div class="thumbnail-item">
@@ -37,11 +45,18 @@
                 </div>
                 <div class="thumbnail-item">
                     <img src="https://scontent-sjc3-1.cdninstagram.com/vp/16fc6163cf9026578771dd056c553ee4/5C507411/t51.2885-15/e35/38753626_293030034614624_3652947776343375872_n.jpg" alt="">
-                </div>                
+                </div>                 -->
     
     </div>
     <div class="picture-frame">
-            <img src="https://scontent-sjc3-1.cdninstagram.com/vp/16fc6163cf9026578771dd056c553ee4/5C507411/t51.2885-15/e35/38753626_293030034614624_3652947776343375872_n.jpg" alt="">
+        <!-- 
+            This is my "output" for when
+            the user clicks a thumbnail.
+            I will modify the src attribute
+            and set it to the same src
+            as the thumbnail that got clicked.
+         -->
+        <img data-output src="" alt="">
     </div>
     <script src="scripts/index.js"></script>
 </body>

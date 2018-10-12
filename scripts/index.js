@@ -12,3 +12,14 @@ const IMAGES = [
 //     "images/milla-666.jpg",
 //     "images/oakley-2.jpg"
 // ];
+
+// function that generates the thumbnail div
+// function that generates an img element
+function createImage(imageURL) {
+    const theImage = document.createElement('img');
+
+    // theImage.src = imageURL;
+    theImage.setAttribute('src', imageURL);
+
+    return theImage;
+}
