@@ -19,6 +19,12 @@ function createImage(imageURL) {
     
     // theImage.src = imageURL;
     theImage.setAttribute('src', imageURL);
+
+    // add an event listener to the image
+    theImage.addEventListener('click', function () {
+        console.log('hello!');
+    });
+
     
     return theImage;
 }
@@ -33,3 +39,9 @@ function createThumbnail(imageURL){
 
     return theContainer;
 }
+
+// just draw a thumbnail to the body
+// so we can test the clicky mc clickersonability
+let firstImageURL = IMAGES[0];
+let testThumb = createThumbnail(firstImageURL);
+document.body.appendChild(testThumb);
