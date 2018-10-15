@@ -74,4 +74,14 @@ IMAGES.forEach(function (anImageUrl) {
     thumbnailContainer.appendChild(aThumbnail);
 });
 
+window.addEventListener('keydown', function (event) {
+    // console.log('you pressed a key');
+    // console.log(event);
+    // key: "Escape"
+    // keyCode: 27
 
+    if (event.keyCode === 27) {
+        console.log('I want to hide the modal!');
+        modalElement.classList.add('modal-hidden');
+    }
+});
