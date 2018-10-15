@@ -13,6 +13,8 @@ const IMAGES = [
 //     "images/oakley-2.jpg"
 // ];
 
+const outputElement = document.querySelector('[data-output]');
+
 // function that generates an img element
 function createImage(imageURL) {
     const theImage = document.createElement('img');
@@ -30,11 +32,14 @@ function createImage(imageURL) {
 
         // I can now set the output image's src
         // to event.target.src!
+        outputElement.setAttribute('src', event.target.src);
     });
 
     
     return theImage;
 }
+
+
 
 // function that generates the thumbnail div
 function createThumbnail(imageURL){
@@ -52,3 +57,4 @@ function createThumbnail(imageURL){
 let firstImageURL = IMAGES[0];
 let testThumb = createThumbnail(firstImageURL);
 document.body.appendChild(testThumb);
+
