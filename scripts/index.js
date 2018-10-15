@@ -13,6 +13,7 @@ const IMAGES = [
 //     "images/oakley-2.jpg"
 // ];
 
+const thumbnailContainer = document.querySelector('[data-container]');
 const outputElement = document.querySelector('[data-output]');
 
 // function that generates an img element
@@ -62,9 +63,9 @@ function createThumbnail(imageURL){
 IMAGES.forEach(function (anImageUrl) {
 
     // We pass that image URL to our createThumbnail func
-    let testThumb = createThumbnail(anImageUrl);
+    let aThumbnail = createThumbnail(anImageUrl);
 
     // then append that thumbnail to the page.
-    document.body.appendChild(testThumb);
+    thumbnailContainer.appendChild(aThumbnail);
 });
 
