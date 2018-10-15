@@ -15,6 +15,8 @@ const IMAGES = [
 
 const thumbnailContainer = document.querySelector('[data-container]');
 const outputElement = document.querySelector('[data-output]');
+const modalElement = document.querySelector('[data-modal]');
+// console.log(modalElement);
 
 // function that generates an img element
 function createImage(imageURL) {
@@ -34,6 +36,9 @@ function createImage(imageURL) {
         // I can now set the output image's src
         // to event.target.src!
         outputElement.setAttribute('src', event.target.src);
+        // modalElement.classList.toggle('modal-hidden');
+        // "remove" is more specific, so we'll use that. yeah!
+        modalElement.classList.remove('modal-hidden');
     });
 
     
@@ -68,4 +73,5 @@ IMAGES.forEach(function (anImageUrl) {
     // then append that thumbnail to the page.
     thumbnailContainer.appendChild(aThumbnail);
 });
+
 
