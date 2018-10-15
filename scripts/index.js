@@ -54,7 +54,17 @@ function createThumbnail(imageURL){
 
 // just draw a thumbnail to the body
 // so we can test the clicky mc clickersonability
-let firstImageURL = IMAGES[0];
-let testThumb = createThumbnail(firstImageURL);
-document.body.appendChild(testThumb);
+// let firstImageURL = IMAGES[0];
+
+// Loop through the IMAGES array.
+// For each image, call the anonymous function.
+// The anon func should expect to receive an image URL
+IMAGES.forEach(function (anImageUrl) {
+
+    // We pass that image URL to our createThumbnail func
+    let testThumb = createThumbnail(anImageUrl);
+
+    // then append that thumbnail to the page.
+    document.body.appendChild(testThumb);
+});
 
