@@ -5,18 +5,16 @@ const IMAGES = [
     "https://scontent-sjc3-1.cdninstagram.com/vp/16fc6163cf9026578771dd056c553ee4/5C507411/t51.2885-15/e35/38753626_293030034614624_3652947776343375872_n.jpg"
 ];
 
-// Alternate version if you're using images on the hard drive.
-// Make sure to copy the images to an "images" folder in your project
-// const IMAGES = [
-//     "images/oakley-1.jpg",
-//     "images/milla-666.jpg",
-//     "images/oakley-2.jpg"
-// ];
-
+// ===================================================
+// DOM element queries
+// ===================================================
 const thumbnailContainer = document.querySelector('[data-container]');
 const outputElement = document.querySelector('[data-output]');
 const modalElement = document.querySelector('[data-modal]');
-// console.log(modalElement);
+
+// ===================================================
+// Element creation functions
+// ===================================================
 
 // function that generates an img element
 function createImage(imageURL) {
@@ -45,8 +43,6 @@ function createImage(imageURL) {
     return theImage;
 }
 
-
-
 // function that generates the thumbnail div
 function createThumbnail(imageURL){
     const theContainer = document.createElement('div');
@@ -58,30 +54,31 @@ function createThumbnail(imageURL){
     return theContainer;
 }
 
-// just draw a thumbnail to the body
-// so we can test the clicky mc clickersonability
-// let firstImageURL = IMAGES[0];
+// ===================================================
+// Main: starts the app
+// ===================================================
+function main() {
+    // Make the thumbnails
+    IMAGES.forEach(function (anImageUrl) {
 
-// Loop through the IMAGES array.
-// For each image, call the anonymous function.
-// The anon func should expect to receive an image URL
-IMAGES.forEach(function (anImageUrl) {
-
-    // We pass that image URL to our createThumbnail func
-    let aThumbnail = createThumbnail(anImageUrl);
-
-    // then append that thumbnail to the page.
-    thumbnailContainer.appendChild(aThumbnail);
-});
-
-window.addEventListener('keydown', function (event) {
-    // console.log('you pressed a key');
-    // console.log(event);
-    // key: "Escape"
-    // keyCode: 27
-
-    if (event.keyCode === 27) {
+        // We pass that image URL to our createThumbnail func
+        let aThumbnail = createThumbnail(anImageUrl);
+    
+        // then append that thumbnail to the page.
+        thumbnailContainer.appendChild(aThumbnail);
+    });
+    
+    // Add global modal-closers
+    window.addEventListener('keydown', function (event) {
+        if (event.keyCode === 27) {
+            console.log('I want to hide the modal!');
+            modalElement.classList.add('modal-hidden');
+        }
+    }); 
+    modalElement.addEventListener('click', function (event) {
         console.log('I want to hide the modal!');
         modalElement.classList.add('modal-hidden');
-    }
-});
+    });
+    
+}
+
