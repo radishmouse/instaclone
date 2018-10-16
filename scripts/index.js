@@ -79,6 +79,18 @@ function main() {
         console.log('I want to hide the modal!');
         modalElement.classList.add('modal-hidden');
     });
+
+    // Add global previous/next keyboard listeners
+    window.addEventListener('keydown', function (event) {
+        // console.log(event.keyCode);
+        // debugger;
+        if (event.keyCode === 37) {
+            console.log('go to previous image');
+        } else if (event.keyCode === 39) {
+            console.log('go to the next image');
+        }
+    });
     
 }
 
+main();
