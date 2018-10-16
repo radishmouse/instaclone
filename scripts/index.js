@@ -6,6 +6,47 @@ const IMAGES = [
 ];
 
 // ===================================================
+// Array "navigation" functions
+// ===================================================
+function getNextImage(currentURL) {
+    // find the currentURL's index in the IMAGES array
+    let index = IMAGES.indexOf(currentURL);
+    // TODO: check if index is -1 at this point.
+    // show an error or do something nice.
+
+    // increment the index
+    index++;
+
+    // check if it's within bounds, reset if necessary
+    if (index === IMAGES.length) {
+        index = 0;
+    }
+
+    // then return the image URL at the new index
+    return IMAGES[index];
+}
+
+function getPrevImage(currentURL) {
+    // find the currentURL's index in the IMAGES array
+    let index = IMAGES.indexOf(currentURL);
+    // TODO: check if index is -1 at this point.
+    // show an error or do something nice.
+
+    // decrement the index
+    index--;
+
+    // check if it's within bounds, reset if necessary
+    if (index < 0) {
+        index = IMAGES.length - 1;
+    }
+
+    // then return the image URL at the new index
+    return IMAGES[index];
+}
+
+
+
+// ===================================================
 // DOM element queries
 // ===================================================
 const thumbnailContainer = document.querySelector('[data-container]');
